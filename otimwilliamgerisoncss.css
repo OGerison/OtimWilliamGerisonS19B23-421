@@ -1,0 +1,30 @@
+body {
+  font-family: "Avenir Next";
+  background-image: url(sky.jpg);
+  background-size: cover;
+}
+
+.header{
+  background-color: #000000;
+  height: 90px;
+  opacity:0.6;
+}
+
+.main{
+  background-image: url(sky.jpg);
+  height: 10000px;
+  opacity:0.9;
+}
+
+img{
+  float: left;
+  padding: 20px;
+  opacity:1.0;
+}
+h1{
+  float:right;
+  color:#ff0000;
+}
+h2{
+  color:#ff0000;
+}
