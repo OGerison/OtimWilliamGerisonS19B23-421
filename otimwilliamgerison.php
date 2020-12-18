@@ -1,8 +1,48 @@
+<?PHP
+$host = "localhost";
+$user ="root"; 
+$password = "";
+$database = "feedback";
+$connection = new mysqli ($host,$user,$password,$database);
+if ($connection -> error)
+{print("ERROR");
+}
+else {
+	print ("CONNECTION SUCCESSFUL");
+}
+if (isset($_POST ['SAVE'])){
+	echo "<br>";	
+	$names = $_POST['name'];
+	$emailed = $_POST['emails'];
+	$telephones = $_POST['telephone'];
+	$comments = $_POST['comment'];
+	
+	$sql = "insert into contact_us(Name,Email,Telephone,Comment)values('$names','$emailed','$telephones','$comments')";
+	if ($connection -> query($sql)){
+		echo"User Data inserted successfully.";
+	}
+else		{
+	echo "Error is here." .$connection ->error;
+	}
+}
+
+if (isset($_POST ['SAVED'])){
+	$sql = "select * from contact_us";
+	$myquery = $connection->query($sql);
+	$result = $myquery ->fetch_assoc();
+	while($result = $myquery->fetch_assoc()){
+		echo "<br>";
+		print $result['Name']."".$result['Email']."".$result['Telephone']."".$result['Comment'];
+		echo"<br>";
+	}
+}
+?>
+
 <!DOCTYPE>
 <html>
 <head>
     <title>ABOUT</title>
-    <link rel="stylesheet" href="OTIM WILLIAM GERISON.css">
+    <link rel="stylesheet" href="otimwilliamgerisoncss.css">
     <meta charset = "utf-8">
 </head>
 <body>
@@ -45,7 +85,7 @@
 </b>
 </div>
 <div>
-<form action ="bio.php" method = "POST">
+<form action ="otimwilliamgerison.php" method = "POST">
 	Name
 	<input type="text" name = "name"/>
 	<br>
@@ -60,7 +100,7 @@
 	<br>
 	<input type="submit" name = "SAVE"  value = "INSERT" />
 	<input type="submit" name = "SAVED"  value = "DISPLAY" />
-	</form>	
+</form>	
 </div>
 </body>
 </html>
