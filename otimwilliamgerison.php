@@ -48,7 +48,7 @@ if (isset($_POST ['SAVED'])){
 <body>
 <div class="header">
 	<div class="header-logo">
-		<img src="ortis.jpg"height = "50px" width = "50px">
+	<img src="ortis.jpg"height = "50px" width = "50px">
 	</div>
 	<h1>OTIM WILLIAM GERISON</h1>
 </div>
@@ -70,9 +70,6 @@ if (isset($_POST ['SAVED'])){
 <b>
 <ul>
 	<li>Watching and analyzing football.</li>
-<video width="320" height="240" controls>
-  <source src="aaron.mp4" type="video/mp4">
-</video>
 	<li>Watching Documentaries.</li>
 	<li>Travelling.</li>
 </ul>
